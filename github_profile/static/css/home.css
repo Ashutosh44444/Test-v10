@@ -1,0 +1,33 @@
+section#home {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 400%; /* Adjust the width to accommodate 4 videos (100% per video) */
+    height: 100%;
+    transition: transform 1s ease-in-out; /* Smooth transition for sliding */
+  }
+  
+  .back-video {
+    width: 100vw; /* Each video takes the full viewport width */
+    height: 100vh;
+    object-fit: cover;
+    flex-shrink: 0; /* Prevent shrinking */
+  }
+  
+  h2, p {
+    z-index: 1;
+    color: white;
+    position: relative;
+  }
+  
