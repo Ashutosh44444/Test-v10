@@ -1,0 +1,374 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #ffffff; 
+    color: rgb(0, 0, 0);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: transparent; 
+    transition: background-color 0.6s ease-in-out, box-shadow 1s ease-in-out; /* Smooth transition */
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 60px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    height: 60px;
+}
+
+nav a {
+    height: 100%;
+    padding: 0 15px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: rgb(0, 0, 0); /* White text */
+    transition: transform 0.5s ease, color 0.5s ease;
+}
+
+/* .custom-icon{
+    transition: transform 0.5s ease, color 0.5s ease;
+}
+
+.custom-icon a:hover {
+    transform: scale(1.2);
+    color: #03e9f4; 
+    font-weight: bold; 
+} 
+*/
+
+nav a:hover {
+    transform: scale(1.2); 
+    color: #011f21; 
+    font-weight: lighter; 
+}
+
+.right-section {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.right-section li {
+    margin-left: 10px;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 60%;
+    width: 0;
+    background-color: whitesmoke;
+    /* border: #712424; */
+    border-width: 1px;
+    border-radius: 5px;
+    overflow-x: hidden;
+    transition: 0.6s;
+    z-index: 1000;
+    padding-top: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar a {
+    padding: 8px 12px;
+    font-size: 18px;
+    color: black;
+    text-decoration: none;
+    display: inline-flex;
+    position: relative;
+    transition: transform 0.3 ease;
+}
+
+.sidebar a:hover {
+    color: rgb(23, 37, 37); 
+    transform: scale(1.1);
+    font-weight: bold; 
+}
+
+.menu-button {
+    display: inline-block;
+    padding: 2px;
+}
+
+.hideOnMobile {
+    display: none;
+}
+
+@media screen and (min-width: 650px) {
+    .hideOnMobile {
+        display: inline-block;
+    }
+    .menu-button {
+        display: none;
+        position: fixed;
+    }
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+    z-index: 900;
+}
+
+.overlay.active {
+    visibility: visible;
+}
+
+#home, #products, #about, #collections {
+    padding: 20px 20px;
+    text-align: center;
+}
+
+/* Change navbar color on scroll */
+.navbar-scrolled {
+    background-color: rgb(0, 0, 0); 
+    box-shadow: 0px 4px 10px rgba(121, 115, 115, 0.807);
+}
+
+.navbar-scrolled a {
+    color: rgb(255, 255, 255);
+}
+
+.cart-badge {
+    /* background-color: white; */
+    border-radius: 50%;
+    color: rgb(0, 0, 0);
+    padding: 2px 6px;
+    font-size: 10px;
+    position: absolute;
+    top: 13px;
+    right: 4px;
+    transition: background-color 0.6s ease, color 0.6s ease;
+}
+
+/* Animation for quote text glowing effect */
+
+
+.menu-button svg {
+    fill: rgb(0, 0, 0); 
+}
+
+/* Navbar after scrolling, icon color changes to black */
+.navbar-scrolled .menu-button svg {
+    fill: rgb(255, 255, 255); 
+}
+
+/* Optional hover effect for the menu button */
+.menu-button:hover svg {
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
+}
+
+
+.underline-animation {
+    display: inline-block;
+    position: relative;
+    font-size: 18px;
+    color: #010101;
+    font-weight: bold;
+}
+
+.underline-animation::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    transition: width 0.5s ease-in-out;
+}
+
+.underline-animation:hover::after {
+    width: 100%;
+}
+
+.custom-icon svg path {
+    fill: #000000; 
+}
+
+.custom-icon svg path {
+    fill: rgb(0, 0, 0); 
+    transition: fill 0.6s ease; 
+}
+
+.navbar-scrolled .custom-icon svg path {
+    fill: rgb(255, 255, 255);
+}
+
+.custom-icon:hover svg path {
+    fill: lightgray; 
+    transition: fill 0.3s ease;
+}
+
+.navbar-scrolled .cart-badge {
+    /* background-color: black; Background color when navbar is scrolled */
+    color: rgb(255, 255, 255); 
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.cart-badge, .navbar-scrolled .cart-badge {
+    transition: background-color 0.6s ease, color 0.6s ease;
+}
+
+/* Resume */
+.resume-button{
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    align-items: flex-end;
+    bottom: 20px; 
+    right: 20px;
+    z-index: 1000;
+    size: 2px;
+     
+}
+
+.resume{
+    position: relative;
+    display: inline-block;
+    padding: 12px 18px;
+    text-transform: uppercase;
+    color: #03e9f4;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: .5s;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.resume:hover{
+    background-color: #03e9f4;
+    color: #050801;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 200px #03e9f4;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+}
+
+.resume:first-child{
+    filter: hue-rotate(360deg);
+}
+
+.resume:last-child{
+    filter: hue-rotate(0deg);
+}
+
+.resume span{
+    position: absolute;
+    display: block;
+}
+
+.resume span:nth-child(1){
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #03e9f4);
+    animation: animate1 1.5s infinite;
+}
+
+@keyframes animate1 {
+    0%{
+        left: -100%;
+    }
+    100%{
+        left: 100%;
+    }
+}
+
+.resume span:nth-child(2){
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #03e9f4);
+    animation: animate2 1.5s infinite;
+    animation-delay: .4s;
+}
+
+@keyframes animate2 {
+    0%{
+        top: -100%;
+    }
+    100%{
+        top: 100%;
+    }
+}
+
+.resume span:nth-child(3){
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #03e9f4);
+    animation: animate3 1.5s infinite;
+    animation-delay: 0.8s;
+}
+
+@keyframes animate3 {
+    0%{
+        right: -100%;
+    }
+    100%{
+        right: 100%;
+    }
+}
+
+
+.resume span:nth-child(4){
+    bottom: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #03e9f4);
+    animation: animate4 1.5s infinite;
+    animation-delay: 1.15s;
+}
+
+@keyframes animate4 {
+    0%{
+        bottom: -100%;
+    }
+    100%{
+        bottom: 100%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .resume-button {
+        right: 20px;
+        bottom: 20px;
+    }
+    .resume {
+        font-size: 0.9rem;
+        padding: 10px 15px;
+    }
+}
